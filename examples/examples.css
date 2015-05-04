@@ -62,7 +62,8 @@ h1{
 	font-size: 6em;
 }
 p{
-	font-size: 2em;
+	font-size: 1em;
+    color: 'black';
 }
 .intro p{
 	width: 50%;
@@ -242,3 +243,8 @@ p{
 	z-index: 999;
  }
 
+/*Navigation dots*/
+
+#fp-nav ul li a span, .fp-slidesNav ul li a span {
+    background: #fff;
+}
