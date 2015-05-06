@@ -11,24 +11,21 @@
 	<meta name="keywords"  content="Ocean, Health, Ocean Health, University of Miami" />
 	<meta name="Resource-type" content="Document" />
     
-<!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">-->
-    
 <!--<link rel="stylesheet" href="css/normalize.min.css">-->
-        <link rel="stylesheet" type="text/css" href="css/main.css" />  
+    <link rel="stylesheet" type="text/css" href="css/main.css" />  
 <link rel="stylesheet" type="text/css" href="../jquery.fullPage.css" />
 <link rel="stylesheet" type="text/css" href="examples.css" />
-<!--<link href="../style.css" rel="stylesheet" type="text/css" /> -->
-<!--<link href="css/style.css" rel="stylesheet" type="text/css" />-->
+ 
+<!--    Fancybox Start  -->
     
-<!--
-<link href="css/pagestyle.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="css/demo.css" type="text/css" media="screen" />
--->
-<!--	<link rel="stylesheet" href="../flexslider.css" type="text/css" media="screen" />-->
+    <script type="text/javascript" src="../lib/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="../source/jquery.fancybox.js?v=2.1.5"></script>
+	<link rel="stylesheet" type="text/css" href="../source/jquery.fancybox.css?v=2.1.5"    media="screen" />
+    
+<!--    Fancybox end -->
     
     
-    
-    <!-- Import required css and js files -->
+
 	<style>
 
         
@@ -40,16 +37,37 @@
 		font-family: arial,helvetica;
 		color: #fff;
 		margin:0;
-		padding:0;
+		padding-bottom: 60px;
         vertical-align: middle;
+        
 	}
+        h2 {
+            font-size: 3em;
+            font-family: arial, sans-serif;
+            color: #fff;
+            text-align: center;
+        }
+        
+        h3{
+  font-size: 4em;
+  font-family: 'Helvetical', sans-serif; 
+  color: #FFFFFF;
+    line-height: 1em;
+}
+        
+              
+        
 	.intro p{
 		color: #fff;
 	}
     p {
         font-family: arial,helvetica;
-		color: '#02375e';
+		color: '#fff';
     }
+        
+        .fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222; 
+        }
         
 	/* Centered texts in each section
 	* --------------------------------------- */
@@ -101,30 +119,30 @@
 		background-image: url(imgs/Background8.png);
  background-size: cover;
 	}
-        	#section10{
+    #section10{
 		background-image: url(imgs/Background2.png);
 		 background-size: cover;
      
 	}
         
      #slide2{
-		background-color: #dc6043;
+		background-color: #02375e;
 		z-index: 20px;
      }
     #slide3{
-		background-color: #d0c900;
+		background-color: #02375e;
 		z-index: 20px;
      }
-          #slide4{
-		background-color: #2fbadf;
+    #slide4{
+		background-color: #02375e;
 		z-index: 20px;
      }
     
-                 #slide5{
-		background-color: #21b2a8;
+     #slide5{
+		background-color: #02375e;
 		z-index: 20px;
      }
-                         #slide6{
+     #slide6{
 		background-color: #02375e;
 		z-index: 20px;
      }
@@ -202,36 +220,44 @@
         sectionsColor:      ['#12385c','#12385c','#12385c','#12385c','#12385c','#12385c','#12385c','#12385c','#12385c','#12385c','#12385c'],
         navigation: true,
         navigationPosition: 'left',
-        navigationTooltips: ['Introduction', 'Fundamentals', 'Quiz', 'Learning Platforms', 'Critical Thinking', 'Discussions','Capstone Project', 'Further          Explorations', 'Dashboard','Communication Center','trest'],
+        navigationTooltips: ['Introduction', 'Fundamentals', 'Quiz', 'Learning Platforms', 'Critical Thinking', 'Discussions','Capstone Project', 'Further Explorations', 'Dashboard','Communication Center'],
         scrollOverflow: true,
         showActiveTooltips: false,
         slidesNavigation: true,
         slidesNavPosition: 'bottom',
-        slidesnavigationTooltips: ['Biodiversity', 'Coastal Protection', 'Clean Water', 'Carbon Storage', 'Artisinal Fishing']
+        slidesnavigationTooltips: ['Biodiversity', 'Coastal Protection', 'Clean Water', 'Carbon Storage', 'Artisinal Fishing']  
                 
             });
             
+            
+        
+            //Fancybox
+                $('.fancybox').fancybox(); {
+                }
+            
+            //Play Video right away
+                $('video').get(0).play(); {
+                }
+            
+            //Progress in dashboard
+            $('progress').each(function() {
+    var max = $(this).val();
+    $(this).val(0).animate({ value: max }, { duration: 2000, easing: 'easeOutCirc' });
+			});
 //            $(".communicator").click( function() {
 //                $(".comcenter").toggleClass("showComm");
 //            });
         
         
         });
-        //playing the video
-        $(document).ready(function() {
+   
         
-        $('video').get(0).play();
-			});
-        
-        
-        $(function() {
-  $('progress').each(function() {
-    var max = $(this).val();
-    $(this).val(0).animate({ value: max }, { duration: 2000, easing: 'easeOutCirc' });
-			});
-});
+    
+
 				
-	</script>
+	
+   
+    </script>
         
         
 
@@ -357,6 +383,7 @@
 -->
   
 <div id="fullpage">
+    
 <!--    Start section 1 -->
 	<div class="section" id="section1">
 		
@@ -379,11 +406,27 @@
 
 </div> </div> 
             <div class="slide" id="slide2" data-anchor="slide2">
-	
+
 				<h1>BIODIVERSITY</h1>
+                
+              
+<!-- I need help with this section but I feel like it is close -->
                 
 				<video autoplay loop muted controls="false" id="myVideo">
                     <source src="imgs/flowers.mp4" type="video/mp4"> </video>
+                
+                <a class="fancybox" href="imgs/Biodiversity.png" alt="Benthic Zones" title="Benthic Zones">  
+                    <ul id="button">
+                         <li> Hotspot 
+                         </li>
+                </ul></a>
+             
+            
+                	  
+                
+              
+                
+              
 		</div>
 
 	    <div class="slide" id="slide3" data-anchor="slide3">
@@ -392,6 +435,10 @@
 			<video autoplay loop muted controls="false" id="myVideo">
 			<source src="imgs/flowers.mp4" type="video/mp4">
                 <source src="imgs/flowers.webm" type="video/webm"> </video>
+             <ul id="button">
+                         <li data-menuanchor="#"><a href="#"> Hotspot </a>
+                         </li>
+                </ul>
 		</div>
             
             <div class="slide" id="slide4">
@@ -400,6 +447,10 @@
 			<video autoplay loop muted controls="false" id="myVideo">
 			<source src="imgs/flowers.mp4" type="video/mp4">
                 <source src="imgs/flowers.webm" type="video/webm"> </video>
+                 <ul id="button">
+                         <li data-menuanchor="#"><a href="#"> Hotspot </a>
+                         </li>
+                </ul>
 		</div>
                 <div class="slide" id="slide5">
 			<h1> CARBON STORAGE </h1>
@@ -407,6 +458,10 @@
 			<video autoplay loop muted controls="false" id="myVideo">
 			<source src="imgs/flowers.mp4" type="video/mp4">
                 <source src="imgs/flowers.webm" type="video/webm"> </video>
+                     <ul id="button">
+                         <li data-menuanchor="#"><a href="#"> Hotspot </a>
+                         </li>
+                </ul>
 		</div>
                     <div class="slide" id="slide6">
 			<h1> ARTISINAL FISHING </h1>
@@ -414,6 +469,10 @@
 			<video autoplay loop muted controls="false" id="myVideo">
 			<source src="imgs/flowers.mp4" type="video/mp4">
                 <source src="imgs/flowers.webm" type="video/webm"> </video>
+                         <ul id="button">
+                         <li data-menuanchor="#"><a href="#"> Hotspot </a>
+                         </li>
+                </ul>
 		</div>
 	</div>
 
@@ -424,231 +483,272 @@
 	<div class="section" id="section3">
 		<div class="slide" id="slide1">
 			<h1>QUIZ</h1>
-
 		</div>
-        <div class="slide" id="slide2">
-            
+        
+        <div class="slide" id="slide2">   
+ <h2>This is a question?</h2>
+             
              <div class="box-container">
 
-            <div class="box-item"> 
+            <div class="box-item1"> 
                <ol>
             
-                <li>
-                
-                    <h3>This is a question</h3>
-                    
-                    <div>
+                <li>  
+       <div>
                         <input type="radio" name="question-1-answers" id="question-1-answers-A" value="A" />
-                        <label for="question-1-answers-A">A) Answer 1 </label>
+           <label for="question-1-answers-A">  A) Answer 1 </label>
                     </div>
-                    
-                    <div>
-                        <input type="radio" name="question-1-answers" id="question-1-answers-B" value="B" />
-                        <label for="question-1-answers-B">B) Answer 2</label>
-                    </div>
-                    
-                    <div>
-                        <input type="radio" name="question-1-answers" id="question-1-answers-C" value="C" />
-                        <label for="question-1-answers-C">C) Answer 3</label>
-                    </div>
-                    
-                    <div>
-                        <input type="radio" name="question-1-answers" id="question-1-answers-D" value="D" />
-                        <label for="question-1-answers-D">D) Answer 4</label>
-                    </div>
-                
-                </li>
-            </ol>
-		
-        
+                   </li>
+                    </ol>
+                 </div>      
             </div>
+             
+              <div class="box-container">
 
+            <div class="box-item1"> 
+               <ol>
+                <li>  
+       <div>
+                        <input type="radio" name="question-1-answers" id="question-1-answers-A" value="A" />
+                        <label for="question-1-answers-A">B) Answer 2 </label>
+                    </div>
+                   </li>
+                    </ol>
+                 </div>      
+            </div>
+             
+              <div class="box-container">
 
+            <div class="box-item1"> 
+               <ol>
+            
+                <li>  
+       <div>
+                        <input type="radio" name="question-1-answers" id="question-1-answers-A" value="A" />
+                        <label for="question-1-answers-A">C) Answer 3 </label>
+                    </div>
+                   </li>
+                    </ol>
+                 </div>      
+            </div>
+             
+              <div class="box-container">
 
-               
+            <div class="box-item1"> 
+               <ol>
+            
+                <li>  
+       <div>
+                        <input type="radio" name="question-1-answers" id="question-1-answers-A" value="A" />
+                        <label for="question-1-answers-A">D) Answer 4 </label>
+                    </div>
+                   </li>
+                    </ol>
+                 </div>      
             </div>
                    
             
         </div>
          <div class="slide" id="slide3">
             
+             
+              <h2>This is a question?</h2>
+             
              <div class="box-container">
 
-            <div class="box-item"> 
+            <div class="box-item1"> 
                <ol>
             
-                <li>
-                
-                    <h3>This is a question</h3>
-                    
-                    <div>
+                <li>  
+       <div>
                         <input type="radio" name="question-1-answers" id="question-1-answers-A" value="A" />
-                        <label for="question-1-answers-A">A) Answer 1 </label>
+           <label for="question-1-answers-A">  A) Answer 1 </label>
                     </div>
-                    
-                    <div>
-                        <input type="radio" name="question-1-answers" id="question-1-answers-B" value="B" />
-                        <label for="question-1-answers-B">B) Answer 2</label>
-                    </div>
-                    
-                    <div>
-                        <input type="radio" name="question-1-answers" id="question-1-answers-C" value="C" />
-                        <label for="question-1-answers-C">C) Answer 3</label>
-                    </div>
-                    
-                    <div>
-                        <input type="radio" name="question-1-answers" id="question-1-answers-D" value="D" />
-                        <label for="question-1-answers-D">D) Answer 4</label>
-                    </div>
-                
-                </li>
-            </ol>
-		
-        
+                   </li>
+                    </ol>
+                 </div>      
             </div>
+             
+              <div class="box-container">
 
+            <div class="box-item1"> 
+               <ol>
+                <li>  
+       <div>
+                        <input type="radio" name="question-1-answers" id="question-1-answers-A" value="A" />
+                        <label for="question-1-answers-A">B) Answer 2 </label>
+                    </div>
+                   </li>
+                    </ol>
+                 </div>      
+            </div>
+             
+              <div class="box-container">
 
+            <div class="box-item1"> 
+               <ol>
+            
+                <li>  
+       <div>
+                        <input type="radio" name="question-1-answers" id="question-1-answers-A" value="A" />
+                        <label for="question-1-answers-A">C) Answer 3 </label>
+                    </div>
+                   </li>
+                    </ol>
+                 </div>      
+            </div>
+             
+              <div class="box-container">
 
-               
+            <div class="box-item1"> 
+               <ol>
+            
+                <li>  
+       <div>
+                        <input type="radio" name="question-1-answers" id="question-1-answers-A" value="A" />
+                        <label for="question-1-answers-A">D) Answer 4 </label>
+                    </div>
+                   </li>
+                    </ol>
+                 </div>      
+            </div>
+           </div>
+         
+             <div class="slide" id="slide4">
+            
+ <h2>This is a question?</h2>
+             
+             <div class="box-container">
+
+            <div class="box-item1"> 
+               <ol>
+            
+                <li>  
+       <div>
+                        <input type="radio" name="question-1-answers" id="question-1-answers-A" value="A" />
+           <label for="question-1-answers-A">  A) Answer 1 </label>
+                    </div>
+                   </li>
+                    </ol>
+                 </div>      
+            </div>
+             
+              <div class="box-container">
+
+            <div class="box-item1"> 
+               <ol>
+                <li>  
+       <div>
+                        <input type="radio" name="question-1-answers" id="question-1-answers-A" value="A" />
+                        <label for="question-1-answers-A">B) Answer 2 </label>
+                    </div>
+                   </li>
+                    </ol>
+                 </div>      
+            </div>
+             
+              <div class="box-container">
+
+            <div class="box-item1"> 
+               <ol>
+            
+                <li>  
+       <div>
+                        <input type="radio" name="question-1-answers" id="question-1-answers-A" value="A" />
+                        <label for="question-1-answers-A">C) Answer 3 </label>
+                    </div>
+                   </li>
+                    </ol>
+                 </div>      
+            </div>
+             
+              <div class="box-container">
+
+            <div class="box-item1"> 
+               <ol>
+            
+                <li>  
+       <div>
+                        <input type="radio" name="question-1-answers" id="question-1-answers-A" value="A" />
+                        <label for="question-1-answers-A">D) Answer 4 </label>
+                    </div>
+                   </li>
+                    </ol>
+                 </div>      
             </div>
                    
             
         </div>
         
-         <div class="slide" id="slide4">
+             <div class="slide" id="slide5">
             
+ <h2>This is a question?</h2>
+             
              <div class="box-container">
 
-            <div class="box-item"> 
+            <div class="box-item1"> 
                <ol>
             
-                <li>
-                
-                    <h3>This is a question</h3>
-                    
-                    <div>
+                <li>  
+       <div>
                         <input type="radio" name="question-1-answers" id="question-1-answers-A" value="A" />
-                        <label for="question-1-answers-A">A) Answer 1 </label>
+           <label for="question-1-answers-A">  A) Answer 1 </label>
                     </div>
-                    
-                    <div>
-                        <input type="radio" name="question-1-answers" id="question-1-answers-B" value="B" />
-                        <label for="question-1-answers-B">B) Answer 2</label>
-                    </div>
-                    
-                    <div>
-                        <input type="radio" name="question-1-answers" id="question-1-answers-C" value="C" />
-                        <label for="question-1-answers-C">C) Answer 3</label>
-                    </div>
-                    
-                    <div>
-                        <input type="radio" name="question-1-answers" id="question-1-answers-D" value="D" />
-                        <label for="question-1-answers-D">D) Answer 4</label>
-                    </div>
-                
-                </li>
-            </ol>
-		
-        
+                   </li>
+                    </ol>
+                 </div>      
             </div>
+             
+              <div class="box-container">
 
+            <div class="box-item1"> 
+               <ol>
+                <li>  
+       <div>
+                        <input type="radio" name="question-1-answers" id="question-1-answers-A" value="A" />
+                        <label for="question-1-answers-A">B) Answer 2 </label>
+                    </div>
+                   </li>
+                    </ol>
+                 </div>      
+            </div>
+             
+              <div class="box-container">
 
+            <div class="box-item1"> 
+               <ol>
+            
+                <li>  
+       <div>
+                        <input type="radio" name="question-1-answers" id="question-1-answers-A" value="A" />
+                        <label for="question-1-answers-A">C) Answer 3 </label>
+                    </div>
+                   </li>
+                    </ol>
+                 </div>      
+            </div>
+             
+              <div class="box-container">
 
-               
+            <div class="box-item1"> 
+               <ol>
+            
+                <li>  
+       <div>
+                        <input type="radio" name="question-1-answers" id="question-1-answers-A" value="A" />
+                        <label for="question-1-answers-A">D) Answer 4 </label>
+                    </div>
+                   </li>
+                    </ol>
+                 </div>      
             </div>
                    
             
         </div>
-         <div class="slide" id="slide5">
-            
-             <div class="box-container">
-
-            <div class="box-item"> 
-               <ol>
-            
-                <li>
                 
-                    <h3>This is a question</h3>
-                    
-                    <div>
-                        <input type="radio" name="question-1-answers" id="question-1-answers-A" value="A" />
-                        <label for="question-1-answers-A">A) Answer 1 </label>
-                    </div>
-                    
-                    <div>
-                        <input type="radio" name="question-1-answers" id="question-1-answers-B" value="B" />
-                        <label for="question-1-answers-B">B) Answer 2</label>
-                    </div>
-                    
-                    <div>
-                        <input type="radio" name="question-1-answers" id="question-1-answers-C" value="C" />
-                        <label for="question-1-answers-C">C) Answer 3</label>
-                    </div>
-                    
-                    <div>
-                        <input type="radio" name="question-1-answers" id="question-1-answers-D" value="D" />
-                        <label for="question-1-answers-D">D) Answer 4</label>
-                    </div>
-                
-                </li>
-            </ol>
-		
-        
-            </div>
-
-
-
-               
-            </div>
                    
             
-        </div>
-         <div class="slide" id="slide2">
-            
-             <div class="box-container">
-
-            <div class="box-item"> 
-               <ol>
-            
-                <li>
-                
-                    <h3>This is a question</h3>
-                    
-                    <div>
-                        <input type="radio" name="question-1-answers" id="question-1-answers-A" value="A" />
-                        <label for="question-1-answers-A">A) Answer 1 </label>
-                    </div>
-                    
-                    <div>
-                        <input type="radio" name="question-1-answers" id="question-1-answers-B" value="B" />
-                        <label for="question-1-answers-B">B) Answer 2</label>
-                    </div>
-                    
-                    <div>
-                        <input type="radio" name="question-1-answers" id="question-1-answers-C" value="C" />
-                        <label for="question-1-answers-C">C) Answer 3</label>
-                    </div>
-                    
-                    <div>
-                        <input type="radio" name="question-1-answers" id="question-1-answers-D" value="D" />
-                        <label for="question-1-answers-D">D) Answer 4</label>
-                    </div>
-                
-                </li>
-            </ol>
-		
-        
-            </div>
-
-
-
-               
-            </div>
-                   
-            
-        </div>
-	
- 
+      
 		</div>
         
     
@@ -671,6 +771,10 @@
                 
 				<video autoplay loop muted controls="false" id="myVideo">
 			<source src="imgs/flowers.mp4" type="video/mp4">
+                     <ul id="button">
+                         <li data-menuanchor="#"><a href="#"> Hotspot </a>
+                         </li>
+                </ul>
 		</div>
 
 	    <div class="slide" id="slide3" data-anchor="slide3">
@@ -679,6 +783,10 @@
 			<video autoplay loop muted controls="false" id="myVideo">
 			<source src="imgs/flowers.mp4" type="video/mp4">
 			<source src="imgs/flowers.webm" type="video/webm">
+                 <ul id="button">
+                         <li data-menuanchor="#"><a href="#"> Hotspot </a>
+                         </li>
+                </ul>
 		</div>
             
             <div class="slide" id="slide4">
@@ -687,6 +795,10 @@
 			<video autoplay loop muted controls="false" id="myVideo">
 			<source src="imgs/flowers.mp4" type="video/mp4">
 			<source src="imgs/flowers.webm" type="video/webm">
+                 <ul id="button">
+                         <li data-menuanchor="#"><a href="#"> Hotspot </a>
+                         </li>
+                </ul>
 		</div>
 	
             </div> 
@@ -701,31 +813,33 @@
             </div>
             
              <div class="slide" id="slide2">
-                          <div class="intro">
+                        
                               
-                       <div class="box-container">
-
-            <div class="box-item"> 
-            
-               <p> Question 1</p> <br>
-               This is a critical thinking question 
-            </div>
+                       
                             
-
-          
-                 <div class="box-item"> 
-            
-               <p> Question 2</p> <br>
+ <div class="box-container">
+     
+   
+      <div class="box-item2"> 
+           <h4> Question 1</h4>
              This is a critical thinking question 
+                     This is a critical thinking question This is a critical thinking question This is a critical thinking question This is a critical thinking question This is a critical thinking question This is a critical thinking question 
+            </div>
+    
+                 <div class="box-item2"> 
+               <h4> Question 2</h4>
+             This is a critical thinking question 
+                     This is a critical thinking question This is a critical thinking question This is a critical thinking question This is a critical thinking question This is a critical thinking question This is a critical thinking question 
             </div>
             </div>
-                     </div> </div>
+                     
+                
+            </div>
+                
+                
+                </div>
 
-            
-           
-            
-		</div>
-                   <!-- End Section 5-->
+                <!-- End Section 5-->
                    <!-- Start Section 6-->
             <div class="section" id="section6">
        
@@ -733,30 +847,21 @@
 			<h1>DISCUSSIONS</h1>
                 </div>
                  <div class="slide" id="slide2">
-                          <div class="intro">
-                              
-                       <div class="box-container">
-
-            <div class="box-item"> 
-            
-                <p>Question 1</p> <br>
-              This is a discussion question 
+                           <div class="box-container">
+     
+   
+      <div class="box-item2"> 
+           <h4> Question 1</h4>
+           
+                   This is a Discussion question  This is a Discussion question  This is a Discussion question  This is a Discussion question  This is a Discussion question  This is a Discussion question  This is a Discussion question  This is a Discussion question  This is a Discussion question 
             </div>
-                            
-
-          
-                 <div class="box-item"> 
-            
-                     <p>Question 2</p> <br>
-          This is a discussion question 
+    
+                 <div class="box-item2"> 
+               <h4> Question 2</h4>
+               This is a Discussion question  This is a Discussion question  This is a Discussion question  This is a Discussion question  This is a Discussion question  This is a Discussion question  This is a Discussion question  This is a Discussion question  This is a Discussion question 
             </div>
-            </div>
-                     </div> </div>
-
-
-                   
-            
-        </div>
+            </div> </div>
+       </div>
 	
                    <!--                                 End Section 6-->
                    <!--                                    Start Section 7-->
@@ -766,20 +871,19 @@
 			<h1>CAPSTONE PROJECT</h1>
                     </div>
                     <div class="slide" id="slide2">
-                          <div class="intro">
-                              
+                         
+                              <h2> Capstone Project Title </h2>
                        <div class="box-container">
 
-            <div class="box-item"> 
+            <div class="box-item3"> 
             
-                <p>Capstone Project</p> <br>
-            This is explaining the Capstone Project
+              This is explaining the Capstone Project        This is explaining the Capstone Project       This is explaining the Capstone Project       This is explaining the Capstone Project       This is explaining the Capstone Project       This is explaining the Capstone Project       This is explaining the Capstone Project       This is explaining the Capstone Project   This is explaining the Capstone Project        This is explaining the Capstone Project       This is explaining the Capstone Project       This is explaining the Capstone Project       This is explaining the Capstone Project       This is explaining the Capstone Project       This is explaining the Capstone Project       This is explaining the Capstone Project
             </div>
                             
 
           
                 
-            </div>
+        
                      </div> </div>
 
 
@@ -792,164 +896,225 @@
 			<h1>FURTHER EXPLORATIONS</h1>
                   </div>
                      <div class="slide" id="slide2">
-                          <div class="intro">
-
+                       
+<h2> Videos </h2>
         <div class="box-container">
 
-            <div class="box-item"> 
+            <div class="box-item4"> 
                <img class="sample" src="imgs/Coral-reef-near-Fiji-007.jpg"/>
-               <h2><a href= "#" target="_blank">Paper 1</a></h2>
-               <p>This is a short description about the first paper. </p>
+               <h4><a href= "#" target="_blank">Video 1</a></h4>
+               <p>This is a short description about the  video. </p>
             </div>
 
 
-               <div class="box-item"> 
+               <div class="box-item4"> 
                <img class="sample" src="imgs/Coral-reef-near-Fiji-007.jpg"/>
-               <h2><a href= "#" target="_blank">Paper 2</a></h2>
-               <p>This is a short description about the second paper. </p>
+               <h4><a href= "#" target="_blank">Video 2</a></h4>
+              <p>This is a short description about the  video. </p>
             </div>
 
 
-               <div class="box-item"> 
+               <div class="box-item4"> 
                <img class="sample" src="imgs/Coral-reef-near-Fiji-007.jpg"/>
-               <h2><a href= "#" target="_blank">Paper 3</a></h2>
-               <p>This is a short description about the third paper. </p>
+               <h4><a href= "#" target="_blank">Video 3</a></h4>
+              <p>This is a short description about the  video. </p>
             </div>
 
                    
             
         </div>
-    </div>
+                             <div class="box-container">
+
+            <div class="box-item4"> 
+               <img class="sample" src="imgs/Coral-reef-near-Fiji-007.jpg"/>
+               <h4><a href= "#" target="_blank">Video 4</a></h4>
+              <p>This is a short description about the  video. </p>
+            </div>
+
+
+               <div class="box-item4"> 
+               <img class="sample" src="imgs/Coral-reef-near-Fiji-007.jpg"/>
+               <h4><a href= "#" target="_blank">Video 5</a></h4>
+              <p>This is a short description about the  video. </p>
+            </div>
+
+
+               <div class="box-item4"> 
+               <img class="sample" src="imgs/Coral-reef-near-Fiji-007.jpg"/>
+               <h4><a href= "#" target="_blank">Video 6</a></h4>
+              <p>This is a short description about the  video. </p>
+            </div>
+
+                   
+            
+        </div>
+  
            
 		</div>
                       
             
                            <div class="slide" id="slide3">
-                          <div class="intro">
-
+                                                
+<h2> Papers </h2>
         <div class="box-container">
 
-            <div class="box-item"> 
+            <div class="box-item4"> 
                <img class="sample" src="imgs/Coral-reef-near-Fiji-007.jpg"/>
-               <h2><a href= "#" target="_blank">Video 1</a></h2>
-               <p>This is a short description about the first video. </p>
+               <h4><a href= "#" target="_blank">Paper 1</a></h4>
+               <p>This is a short description about the paper. </p>
             </div>
 
 
-               <div class="box-item"> 
+               <div class="box-item4"> 
                <img class="sample" src="imgs/Coral-reef-near-Fiji-007.jpg"/>
-               <h2><a href= "#" target="_blank">Video 2</a></h2>
-               <p>This is a short description about the second video. </p>
+               <h4><a href= "#" target="_blank">Paper 2</a></h4>
+               <p>This is a short description about the  paper. </p>
             </div>
 
 
-               <div class="box-item"> 
+               <div class="box-item4"> 
                <img class="sample" src="imgs/Coral-reef-near-Fiji-007.jpg"/>
-               <h2><a href= "#" target="_blank">Video 3</a></h2>
-               <p>This is a short description about the third video. </p>
+               <h4><a href= "#" target="_blank">Paper 3</a></h4>
+               <p>This is a short description about the  paper. </p>
             </div>
 
                    
             
         </div>
-    </div>
-           
-		</div>
-            
-            <div class="slide" id="slide4">
-                          <div class="intro">
+                             <div class="box-container">
 
-        <div class="box-container">
-
-            <div class="box-item"> 
+            <div class="box-item4"> 
                <img class="sample" src="imgs/Coral-reef-near-Fiji-007.jpg"/>
-               <h2><a href= "#" target="_blank">Video 1</a></h2>
-               <p>This is a short description about the first Interactive Learning Section. </p>
+               <h4><a href= "#" target="_blank">Paper 4</a></h4>
+               <p>This is a short description about the paper. </p>
             </div>
 
 
-               <div class="box-item"> 
+               <div class="box-item4"> 
                <img class="sample" src="imgs/Coral-reef-near-Fiji-007.jpg"/>
-               <h2><a href= "#" target="_blank">Video 2</a></h2>
-               <p>This is a short description about the second Interactive Learning Section. </p>
+               <h4><a href= "#" target="_blank">Paper 5</a></h4>
+               <p>This is a short description about the paper. </p>
             </div>
 
 
-               <div class="box-item"> 
+               <div class="box-item4"> 
                <img class="sample" src="imgs/Coral-reef-near-Fiji-007.jpg"/>
-               <h2><a href= "#" target="_blank">Video 3</a></h2>
-               <p>This is a short description about the third Interactive Learning Section. </p>
+               <h4><a href= "#" target="_blank">Paper 6</a></h4>
+               <p>This is a short description about the paper. </p>
             </div>
 
                    
             
         </div>
-    </div>
-           
 		</div>
             <div class="slide" id="slide5">
-                          <div class="intro">
-
+                      <h2> Future Technology </h2>
         <div class="box-container">
 
-            <div class="box-item"> 
+            <div class="box-item4"> 
                <img class="sample" src="imgs/Coral-reef-near-Fiji-007.jpg"/>
-               <h2><a href= "#" target="_blank">Future Technology 1</a></h2>
-               <p>This is a short description about the first Future Technology Section. </p>
+               <h4><a href= "#" target="_blank">Future Tech 1</a></h4>
+               <p>This is a short description about Future Tech. </p>
             </div>
 
 
-               <div class="box-item"> 
+               <div class="box-item4"> 
                <img class="sample" src="imgs/Coral-reef-near-Fiji-007.jpg"/>
-               <h2><a href= "#" target="_blank">Future Technology 2</a></h2>
-               <p>This is a short description about the second Future Technology Section. Section. </p>
+               <h4><a href= "#" target="_blank">Future Tech 2</a></h4>
+               <p>This is a short description about Future Tech. </p>
             </div>
 
 
-               <div class="box-item"> 
+               <div class="box-item4"> 
                <img class="sample" src="imgs/Coral-reef-near-Fiji-007.jpg"/>
-               <h2><a href= "#" target="_blank">Future Technology 3</a></h2>
-               <p>This is a short description about the third Future Technology Section. </p>
+               <h4><a href= "#" target="_blank">Future Tech 3</a></h4>
+               <p>This is a short description about Future Tech. </p>
             </div>
 
                    
             
         </div>
+                             <div class="box-container">
+
+            <div class="box-item4"> 
+               <img class="sample" src="imgs/Coral-reef-near-Fiji-007.jpg"/>
+               <h4><a href= "#" target="_blank">Future Tech 4</a></h4>
+               <p>This is a short description about Future Tech. </p>
+            </div>
+
+
+               <div class="box-item4"> 
+               <img class="sample" src="imgs/Coral-reef-near-Fiji-007.jpg"/>
+               <h4><a href= "#" target="_blank">Future Tech 5</a></h4>
+               <p> This is a short description about Future Tech. </p>
+            </div>
+
+
+               <div class="box-item4"> 
+               <img class="sample" src="imgs/Coral-reef-near-Fiji-007.jpg"/>
+               <h4><a href= "#" target="_blank">Future Tech 6</a></h4>
+               <p>This is a short description about Future Tech. </p>
+            </div>
+
+                   
+                
     </div>
            
 		</div>
                <div class="slide" id="slide6">
-                          <div class="intro">
-
+                              <h2> Get Involved </h2>
         <div class="box-container">
 
-            <div class="box-item"> 
+            <div class="box-item4"> 
                <img class="sample" src="imgs/Coral-reef-near-Fiji-007.jpg"/>
-               <h2><a href= "#" target="_blank">Get Involoved 1</a></h2>
-               <p>This is a short description about the first Get Involved Section. </p>
+               <h4><a href= "#" target="_blank"> Get Involved 1</a></h4>
+               <p>This is a short description about getting involved. </p>
             </div>
 
 
-               <div class="box-item"> 
+               <div class="box-item4"> 
                <img class="sample" src="imgs/Coral-reef-near-Fiji-007.jpg"/>
-               <h2><a href= "#" target="_blank">Get Involved 2</a></h2>
-               <p>This is a short description about the second Get Involved Section. </p>
+               <h4><a href= "#" target="_blank">Get Involved 2</a></h4>
+               <p>This is a short description about getting involved.</p>
             </div>
 
 
-               <div class="box-item"> 
+               <div class="box-item4"> 
                <img class="sample" src="imgs/Coral-reef-near-Fiji-007.jpg"/>
-               <h2><a href= "#" target="_blank">Get Involved 3</a></h2>
-               <p>This is a short description about the third Get Involved Section. </p>
+               <h4><a href= "#" target="_blank">Get Involved 3</a></h4>
+               <p>This is a short description about getting involved.</p>
             </div>
 
                    
             
         </div>
-    </div>
-           
-		</div>
-                         
+                             <div class="box-container">
+
+            <div class="box-item4"> 
+               <img class="sample" src="imgs/Coral-reef-near-Fiji-007.jpg"/>
+               <h4><a href= "#" target="_blank">Get Involved 4</a></h4>
+               <p>This is a short description about getting involved. </p>
+            </div>
+
+
+               <div class="box-item4"> 
+               <img class="sample" src="imgs/Coral-reef-near-Fiji-007.jpg"/>
+               <h4><a href= "#" target="_blank">Get Involved</a></h4>
+               <p> This is a short description about getting involved. </p>
+            </div>
+
+
+               <div class="box-item4"> 
+               <img class="sample" src="imgs/Coral-reef-near-Fiji-007.jpg"/>
+               <h4><a href= "#" target="_blank">Get Involved 6</a></h4>
+               <p>This is a short description about getting involved. </p>
+            </div>
+
+                   
+                
+    </div>        
+   
+                  </div>               
                          
 		</div>
                      <!--                        end Section 8-->
@@ -966,37 +1131,37 @@
                               
         <div class="box-container">
 
-            <div class="box-item"> 
+            <div class="box-item4"> 
                <img class="sample" src="imgs/Coral-reef-near-Fiji-007.jpg"/>
-               <h2> <li data-menuanchor="1stPage"><a href="#1stPage" >Biodiversity</a></li></h2> <br>
-                					<progress value="80" max="100"></progress>
+                
+              <li data-menuanchor="1stPage"><a href="#1stPage" >Biodiversity</a></li>
+          <progress value="80" max="100"></progress>
         
             </div>
 
 
-               <div class="box-item"> 
+               <div class="box-item4"> 
                <img class="sample" src="imgs/Coral-reef-near-Fiji-007.jpg"/>
-               <h2> <li data-menuanchor="1stPage"><a href="#1stPage" >Coastal Protection</a></li></h2> <br>
+             <li data-menuanchor="1stPage"><a href="#1stPage" >Coastal Protection</a></li>
                    					<progress value="70" max="100"></progress>
               
             </div>
 
 
-               <div class="box-item"> 
+               <div class="box-item4"> 
                <img class="sample" src="imgs/Coral-reef-near-Fiji-007.jpg"/>
-               <h2> <li data-menuanchor="1stPage"><a href="#1stPage" >Clean Water</a></li></h2> <br>
+             <li data-menuanchor="1stPage"><a href="#1stPage" >Clean Water</a></li>
                    	<progress value="50" max="100"></progress>
                
             </div>
-                 <div class="box-item"> 
+                 <div class="box-item4"> 
                <img class="sample" src="imgs/Coral-reef-near-Fiji-007.jpg"/>
-               <h2> <li data-menuanchor="1stPage"><a href="#1stPage" >Carbon Storage</a></li></h2> <br>
-                     	<progress value="60" max="100"></progress>
+              <li data-menuanchor="1stPage"><a href="#1stPage" >Carbon Storage</a></li>          	<progress value="60" max="100"></progress>
                
             </div>
-<div class="box-item"> 
+<div class="box-item4"> 
                <img class="sample" src="imgs/Coral-reef-near-Fiji-007.jpg"/>
-               <h2> <li data-menuanchor="1stPage"><a href="#1stPage" >Artisinal Fishing</a></li></h2> <br>
+            <li data-menuanchor="1stPage"><a href="#1stPage" >Artisinal Fishing</a></li>
     	<progress value="20" max="100"></progress>
                
             </div>
@@ -1007,24 +1172,28 @@
            
 		</div>
                       
-                      <div class="slide" id="slide5">
+                      <div class="slide" id="slide2">
                           <div class="intro">
                               
                                                      
         <div class="box-container">
 
-            <div class="box-item"> 
+            <div class="box-item2"> 
                <img class="sample" src="imgs/Ali_Habashi_0.jpg"/>
               
         
             </div>
 
-
-               <div class="box-item"> 
           
-               <h2> <li data-menuanchor="AliEmail"><a href="#ahabashi@miami.edu" >Ali Habashi</a></li></h2> <br>
-                   
-                   Ali Habashi is an award winning documentary filmmaker who has covered stories in more than 30 countries. His work has been featured in CBS4, NBC6, Miami Herald and USA Today and aired on international Cable and Public TV channels such as Discovery (US and India), Canal+(France), CZTV (Czech Republic), LAPTV (Latin America) and CNN Türk.  With an interest to better understand pressing global challenges, his work in recent years has focused on communicating science on a range of topics such as ethnic disparities in health care, access to clean drinking water and sanitation, ocean health index, aging populations and potential implications of increasing the human health-span on economies, resources and generational succession. 
+            <div class="box-item2"> 
+          
+                <strong> Ali Habashi </strong> <br> 
+                University of Miami <br>
+                Email: ahabashi@miami.edu <br>
+                
+                  
+                 <br> 
+                  Ali Habashi is an award winning documentary filmmaker who has covered stories in more than 30 countries. His work has been featured in CBS4, NBC6, Miami Herald and USA Today and aired on international Cable and Public TV channels such as Discovery (US and India), Canal+(France), CZTV (Czech Republic), LAPTV (Latin America) and CNN Türk.  With an interest to better understand pressing global challenges, his work in recent years has focused on communicating science on a range of topics such as ethnic disparities in health care, access to clean drinking water and sanitation, ocean health index, aging populations and potential implications of increasing the human health-span on economies, resources and generational succession. 
 
 
                    				
@@ -1053,25 +1222,25 @@
                               
         <div class="box-container">
 
-            <div class="box-item"> 
+            <div class="box-item4"> 
                <img class="sample" src="imgs/Messages.jpg"/>
-               <h2> <li data-menuanchor="1stPage"><a href="#" >Messages</a></li></h2> <br>
+              <li data-menuanchor="1stPage"><a href="#" >Messages</a></li><br>
                 				
         
             </div>
 
 
-               <div class="box-item"> 
+               <div class="box-item4"> 
                <img class="sample" src="imgs/Assignments.jpg"/>
-               <h2> <li data-menuanchor="1stPage"><a href="#1stPage" >Assignments</a></li></h2> <br>
+             <li data-menuanchor="1stPage"><a href="#1stPage" >Assignments</a></li> <br>
                    					
               
             </div>
 
 
-               <div class="box-item"> 
+               <div class="box-item4"> 
                <img class="sample" src="imgs/Skype.jpg"/>
-               <h2> <li data-menuanchor="1stPage"><a href="http://www.skype.com/en/" >Skype</a></li></h2> <br>
+               <li data-menuanchor="1stPage"><a href="http://www.skype.com/en/" >Skype</a></li> <br>
                  
                
             </div>

@@ -77,17 +77,9 @@ h2 a{
 
 
 
-h3{
-  font-size: 4em;
-  font-family: 'Helvetical', sans-serif; 
-  color: #FFFFFF;
-}
 
-p{
-    
-    font-size: 1em;
-    color: #02375e;
-}
+
+
 
 
 
@@ -102,6 +94,7 @@ p{
   padding-top: .5em;
   margin: 0;
   list-style: none;
+object-position: center;
   
   display: -webkit-box;
   display: -moz-box;
@@ -115,19 +108,66 @@ p{
   align-items: stretch;
 }
 
-.box-item {
-  background: #b4b4b5;
-  padding: 7px;
+/*Quiz Box Item*/
+.box-item1 {
+  background: #fff;
+  padding: 20px;
+  width: 750px;
+  height: 100%;
+  margin-top: 10px;
+  line-height: 1.5em;
+  color: 'black';
+  text-align: left;
+text-decoration-color: 'black';
+    object-position: center;
+
+  border-color: 'white';
+}
+
+/*This is for Critical Thinking and Discussions */
+.box-item2 {
+  background: #fff;
+  padding: 40px;
   width: 400px;
   height: 100%;
   margin-top: 10px;
   line-height: 1.5em;
   color: 'black';
   text-align: left;
-text-decoration-color: currentColor;
 
+ object-position: center;
   border-color: 'white';
 }
+
+/*This is for the Capstone Project*/
+.box-item3 {
+  background: #fff;
+  padding: 40px;
+  width: 800px;
+  height: 100%;
+  margin-top: 10px;
+  line-height: 1.5em;
+  color: 'black';
+  text-align: left;
+
+ object-position: center;
+  border-color: 'white';
+}
+
+/*Furhter Explorations*/
+.box-item4 {
+  background: #034e90;
+  padding: 20px;
+  width: 300px;
+  height: 100%;
+  margin-top: 5px;
+ 
+  line-height: 1.5em;
+  text-align: left;
+object-position: center;
+  border-color: 'white';
+}
+
 
 img.sample {
   width: 100%;

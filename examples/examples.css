@@ -31,13 +31,15 @@ caption,th {
     text-align: left;
 
 }
+/*
 h1,h2,h3,h4,h5,h6 {
     font-weight: normal;
     font-size: 100%;
     margin:0;
     padding:0;
-    color:#444;
+    color:444;
 }
+*/
 q:before,q:after {
     content:'';
 }
@@ -60,11 +62,10 @@ body{
 }
 h1{
 	font-size: 6em;
+    padding: 20px;
+
 }
-p{
-	font-size: 1em;
-    color: 'black';
-}
+
 .intro p{
 	width: 50%;
 	margin: 0 auto;
@@ -111,6 +112,49 @@ p{
 	left:0;
 	height: 40px;
 	z-index: 70;
+	width: 100%;
+	padding: 0;
+	margin:0;
+}
+
+#button li {
+	display:inline-block;
+	margin: 10px;
+	color: #000;
+	background:#fff;
+	background: rgba(255,255,255, 0.5);
+	-webkit-border-radius: 10px;
+            border-radius: 10px;
+}
+
+#button li.active{
+	background:#666;
+	background: rgba(0,0,0, 0.5);
+	color: #fff;
+}
+#button li a{
+	text-decoration:none;
+	color: #000;
+}
+#button li.active a:hover{
+	color: #000;
+}
+#button li:hover{
+	background: rgba(255,255,255, 0.8);
+}
+#button li a,
+#button li.active a{
+	padding: 9px 18px;
+	display:block;
+}
+#button li.active a{
+	color: #fff;
+}
+#button{
+	bottom:0;
+	left:0;
+	height: 40px;
+	z-index: 1;
 	width: 100%;
 	padding: 0;
 	margin:0;
